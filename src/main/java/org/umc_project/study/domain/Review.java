@@ -18,8 +18,7 @@ public class Review extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(precision = 3, scale = 2)
-    private BigDecimal rating;
+    private Float rating;
 
     @Column(nullable = false)
     private String content;
@@ -28,9 +27,9 @@ public class Review extends BaseEntity {
     @JoinColumn(name = "review_reply_id")
     private ReviewReply reviewReply;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "mission_id")
-    private Mission mission;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "mission_id")
+//    private Mission mission;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shop_id")

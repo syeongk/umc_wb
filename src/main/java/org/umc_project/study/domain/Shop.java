@@ -22,8 +22,7 @@ public class Shop extends BaseEntity {
     @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(precision = 3, scale = 2)
-    private BigDecimal rating;
+    private Float rating;
 
     private ShopStatus status;
 
