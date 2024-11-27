@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 public class MissionConverter {
-    public static MissionResponseDTO toMissionResultDTO(Mission mission){
-        return MissionResponseDTO.builder()
+    public static MissionResponseDTO.AddResultDTO toMissionResultDTO(Mission mission){
+        return MissionResponseDTO.AddResultDTO.builder()
                 .missionId(mission.getId())
                 .createdAt(LocalDateTime.now())
                 .build();
     }
 
-    public static Mission toMission(MissionRequestDTO request, Shop shop){
+    public static Mission toMission(MissionRequestDTO.AddDTO request, Shop shop){
         return Mission.builder()
                 .content(request.getContent())
                 .duration(request.getDuration())

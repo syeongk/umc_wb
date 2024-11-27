@@ -26,10 +26,6 @@ public class Mission extends BaseEntity {
     @Column(nullable = false)
     private String content;
 
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "VARCHAR(20) DEFAULT 'PENDING'")
-    private MissionStatus status;
-
     private Integer duration;
 
     private Integer successCriteria;

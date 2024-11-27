@@ -4,20 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.umc_project.study.domain.enums.MemberStatus;
 import org.umc_project.study.domain.enums.MissionStatus;
 
-import java.time.LocalDateTime;
-
-public class MissionResponseDTO {
+public class UserMissionResponseDTO {
 
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class AddResultDTO {
+    public static class progressResultDTO{
+        Long userId;
         Long missionId;
-        LocalDateTime createdAt;
-    }
+        MissionStatus missionStatus;
 
+    }
 }
