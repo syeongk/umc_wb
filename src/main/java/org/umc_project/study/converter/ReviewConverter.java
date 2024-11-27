@@ -10,7 +10,7 @@ import org.umc_project.study.dto.ReviewResponseDTO;
 import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
-public class ShopConverter {
+public class ReviewConverter {
 
     public static ReviewResponseDTO toReviewResultDTO(Review review){
         return ReviewResponseDTO.builder()
