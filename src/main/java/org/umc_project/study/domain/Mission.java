@@ -2,6 +2,8 @@ package org.umc_project.study.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.umc_project.study.domain.common.BaseEntity;
 import org.umc_project.study.domain.enums.MissionStatus;
 import org.umc_project.study.domain.mapping.UserMission;
@@ -14,6 +16,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@DynamicUpdate
+@DynamicInsert
 public class Mission extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

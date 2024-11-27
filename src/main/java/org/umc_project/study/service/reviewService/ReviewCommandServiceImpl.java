@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.umc_project.study.api.code.status.ErrorStatus;
 import org.umc_project.study.api.exception.handler.ShopHandler;
 import org.umc_project.study.api.exception.handler.UserHandler;
-import org.umc_project.study.converter.ShopConverter;
+import org.umc_project.study.converter.ReviewConverter;
 import org.umc_project.study.domain.Review;
 import org.umc_project.study.domain.Shop;
 import org.umc_project.study.domain.User;
@@ -31,7 +31,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
         Shop shop = shopRepository.findById(shopId).orElseThrow(() -> new ShopHandler(ErrorStatus.SHOP_NOT_FOUND));
         User user = userRepository.findById(userId).orElseThrow(() -> new UserHandler(ErrorStatus.USER_NOT_FOUND));
 
-        Review review = ShopConverter.toReview(request, shop, user);
+        Review review = ReviewConverter.toReview(request, shop, user);
 //        review.setShop(shop);
 //        review.setUser(user);
 //        review.setReviewImages(reviewImages);
