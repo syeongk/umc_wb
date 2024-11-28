@@ -24,6 +24,7 @@ public class Shop extends BaseEntity {
 
     private Float rating;
 
+    @Enumerated(EnumType.STRING)
     private ShopStatus status;
 
     @Column(nullable = false)
